@@ -1,17 +1,23 @@
-<table class="table">
-  <thead class="thead-inverse">
-  <tr>
-    <th>#</th>
-    <th>Title</th>
-  </tr>
-  </thead>
-  <tbody>
-  {{#each model as |project|}}
-    <tr>
-      <td>{{project.id}}</td>
-      <td><a href="#">{{project.title}}</a></td>
-    </tr>
-  {{/each}}
-  </tbody>
-</table>
-{{outlet}}
+<div class="row">
+  <div class="col">
+    <table class="table">
+      <thead class="thead-inverse">
+      <tr>
+        <th>#</th>
+        <th>TITLE</th>
+      </tr>
+      </thead>
+      <tbody>
+      {{#each model as |project|}}
+        <tr>
+          <td>{{project.id}}</td>
+          <td>{{link-to project.title 'projects.project.show' project.id}}</td>
+        </tr>
+      {{/each}}
+      </tbody>
+    </table>
+  </div>
+  <div class="col">
+    {{outlet}}
+  </div>
+</div>

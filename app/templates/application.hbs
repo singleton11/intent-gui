@@ -5,12 +5,12 @@
             aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">Intent</a>
+    {{link-to 'Intent' 'application' class='navbar-brand'}}
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Projects <span class="sr-only">(current)</span></a>
+          {{link-to 'Projects' 'projects' class='nav-link'}}
         </li>
       </ul>
     </div>

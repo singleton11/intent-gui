@@ -1,0 +1,17 @@
+<table class="table">
+  <thead class="thead-inverse">
+  <tr>
+    <th>#</th>
+    <th>Title</th>
+  </tr>
+  </thead>
+  <tbody>
+  {{#each model as |project|}}
+    <tr>
+      <td>{{project.id}}</td>
+      <td><a href="#">{{project.title}}</a></td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+{{outlet}}

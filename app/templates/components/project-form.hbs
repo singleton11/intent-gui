@@ -8,6 +8,6 @@
     <label>DESCRIPTION</label>
     {{textarea value=changeset.description class='form-control'}}
   </div>
-  <button type="submit" class="btn btn-primary" {{action save changeset}}>SAVE</button>
+  <button type="submit" class="btn btn-primary" {{action 'save' changeset}}>SAVE</button>
 </form>
 {{yield}}

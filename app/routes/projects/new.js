@@ -5,7 +5,8 @@ export default Ember.Route.extend({
     return this.store.createRecord('project', {});
   },
   deactivate() {
-    if (!this.currentModel.id)
+    if (!this.currentModel.id) {
       this.currentModel.destroyRecord();
+    }
   }
 })

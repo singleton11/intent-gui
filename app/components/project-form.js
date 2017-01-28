@@ -7,7 +7,7 @@ export default Ember.Component.extend({
       changeset.save().then((record) => {
         this.get('router').transitionTo('projects.project.show', [record.id]);
       }).catch(() => {
-        alert('Server error');
+        $('#error').modal('show');
       });
     }
   }

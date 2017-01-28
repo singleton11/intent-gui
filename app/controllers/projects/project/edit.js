@@ -6,6 +6,6 @@ export default Ember.Controller.extend({
       this.get('model').save().then(() => {
         this.transitionToRoute('projects.project.show', this.get('model').id);
       });
-    }
+    },
   }
 });

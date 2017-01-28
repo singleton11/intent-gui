@@ -1,13 +1,11 @@
-import Ember from 'ember';
+import Ember from "ember";
 
 export default Ember.Controller.extend({
-  newModel: {},
   actions: {
-    save() {
-      let record = this.store.createRecord('project', this.get('newModel'));
-      record.save().then(() => {
-        this.transitionToRoute('projects.project.show', record.id)
-      })
-    }
+    save(changeset) {
+      changeset.save().then(() => {
+        this.transitionToRoute('projects.project.show', this.get('model').id);
+      });
+    },
   }
 });

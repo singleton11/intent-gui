@@ -4,7 +4,10 @@ export default Ember.Controller.extend({
   newModel: {},
   actions: {
     save() {
-      this.store.createRecord('project', this.get('newModel')).save();
+      let record = this.store.createRecord('project', this.get('newModel'));
+      record.save().then(() => {
+        this.transitionToRoute('projects.project.show', record.id)
+      })
     }
   }
 });

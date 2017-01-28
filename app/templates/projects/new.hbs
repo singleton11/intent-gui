@@ -1,12 +1,12 @@
 <form>
   <div class="form-group">
     <label>TITLE</label>
-    {{input value=model.title class='form-control'}}
+    {{input value=newModel.title class='form-control'}}
     <small></small>
   </div>
   <div class="form-group">
     <label>DESCRIPTION</label>
-    {{textarea value=model.description class='form-control'}}
+    {{textarea value=newModel.description class='form-control'}}
   </div>
   <button type="submit" class="btn btn-primary" {{action 'save'}}>SAVE</button>
 </form>

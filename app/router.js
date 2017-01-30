@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('projects', function () {
     this.route('new');
     this.route('project', {path: '/:id'}, function () {
-      this.route('show');
+      this.route('show', {path: ''});
       this.route('edit');
     });
   });

@@ -4,5 +4,8 @@ export default {
   title: [
     validatePresence(true),
     validateLength({ min: 4 })
+  ],
+  description: [
+    validatePresence(true),
   ]
 };

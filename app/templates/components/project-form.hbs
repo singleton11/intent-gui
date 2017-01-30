@@ -1,19 +1,22 @@
 {{#with (changeset model ProjectValidations) as |changeset|}}
-  {{#each changeset.errors as |errorSet|}}
-    {{#each errorSet.validation as |error|}}
-      <div class="alert alert-danger" role="alert">
-        {{error}}
-      </div>
-    {{/each}}
-  {{/each}}
   <form>
     <div class="form-group">
       <label>TITLE</label>
+      {{#each changeset.error.title.validation as |error|}}
+        <div class="alert alert-danger" role="alert">
+          {{error}}
+        </div>
+      {{/each}}
       {{input value=changeset.title class='form-control'}}
       <small></small>
     </div>
     <div class="form-group">
       <label>DESCRIPTION</label>
+      {{#each changeset.error.description.validation as |error|}}
+        <div class="alert alert-danger" role="alert">
+          {{error}}
+        </div>
+      {{/each}}
       {{textarea value=changeset.description class='form-control'}}
     </div>
     <button type="submit" class="btn btn-primary" {{action 'save' changeset}}>SAVE</button>
@@ -25,13 +28,13 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Server error</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Validation error!</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        There was error with data you try to commit
+        Fix validation errors before
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

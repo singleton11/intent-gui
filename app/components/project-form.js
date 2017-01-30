@@ -11,11 +11,11 @@ export default Ember.Component.extend({
           changeset.save().then((record) => {
             this.get('router').transitionTo('projects.project.show', [record.id]);
           }).catch(() => {
-            $('#error').modal('show');
+            alert('Something goes wrong');
           });
         }
         else {
-          console.log('client validation error');
+          $('#error').modal('show');
         }
       });
     }

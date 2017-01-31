@@ -1,6 +1,6 @@
 /* jshint node: true */
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   var ENV = {
     modulePrefix: 'intent-gui',
     environment: environment,
@@ -45,6 +45,20 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
+
+  ENV['ember-simple-auth'] = {
+    authorizer: 'authorizer:token'
+  };
+
+  ENV['ember-simple-auth-token'] = {
+    serverTokenEndpoint: 'http://localhost:8000/api/auth/login/',
+    identificationField: 'email',
+    passwordField: 'password',
+    tokenPropertyName: 'key',
+    authorizationPrefix: 'token ',
+    authorizationHeaderName: 'Authorization',
+    headers: {},
+  };
 
   return ENV;
 };
